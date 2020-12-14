@@ -6,7 +6,7 @@ command=$1
 
 if [[ "$command" == "build" ]]
 then
-    docker run --user $(id -u):$(id -g) -v /etc/passwd:/etc/passwd -v $root_dir:/code/ --entrypoint ''  -w /code/ jdk-11:v1 ./gradlew build
+    docker run --user $(id -u):$(id -g) -v /etc/passwd:/etc/passwd -v $root_dir:/code/ --entrypoint ''  -w /code/ feimagao/jdk-11:v1 ./gradlew build
     docker build -t feimagao/perf-practise-cpu:high -f Dockerfile .
 fi
 
